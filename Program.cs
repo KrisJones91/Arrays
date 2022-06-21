@@ -10,7 +10,8 @@ Console.WriteLine("Press (2) for Integer");
 Console.WriteLine("Press (3) for Boolean");
 
 Console.Write("Enter: ");
-int inputType = Convert.ToInt32(Console.ReadLine());
+
+int inputValueType = Convert.ToInt32(Console.ReadLine());
 
 switch (inputType)
 {
@@ -21,14 +22,26 @@ switch (inputType)
         break;
     case 2:
         //check for integer
-
+        int returnValue = 0;
+        valid = int.TryParse(inputValue, out returnValue);
+        inputValueType = "Integer";
+        break;
+    case 3:
+        //check for boolean
+        bool returnFlag = false;
+        valid = bool.TryParse(inputValue, out returnFlag);
+        inputValueType = "Boolean";
+        break;
+    default:
+        Console.WriteLine("Not able to detect the input type, something went wrong.");
+        break;
 }
 
 
 
 
 
-static bool isAllAlhpabetic(string value)
+static bool isAllAlphabetic(string value)
 {
     foreach (char c in value)
     {

@@ -12,9 +12,31 @@ Console.WriteLine("Press (3) for Boolean");
 Console.Write("Enter: ");
 int inputType = Convert.ToInt32(Console.ReadLine());
 
+switch (inputType)
+{
+    case 1:
+        //check for string
+        valid = isAllAlphabetic(inputValue);
+        inputValueType = "String";
+        break;
+    case 2:
+        //check for integer
+
+}
+
+
+
+
+
 static bool isAllAlhpabetic(string value)
 {
+    foreach (char c in value)
+    {
+        if (!char.IsLetter(c))
+            return false;
 
+    }
+    return true;
 }
 
 

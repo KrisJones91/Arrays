@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 Boolean valid = false;
-string inputValueType;
+string inputValueType = string.Empty;
 
 Console.Write("Enter a value: ");
 Console.WriteLine("Select the Data type to validate the input you have entered");
@@ -33,9 +33,21 @@ switch (inputType)
         inputValueType = "Boolean";
         break;
     default:
+        //way one for line 44
+        //inputValueType = "unknown"
         Console.WriteLine("Not able to detect the input type, something went wrong.");
         break;
 }
+Console.WriteLine("You hve entered a value: {0}", inputValue);
+if (valid)
+{
+    Console.WriteLine("It is valid: {0}", inputValueType);
+}
+else
+{
+    Console.WriteLine("It is invalid: {0}", inputValueType);
+}
+Console.ReadKey();
 
 
 
